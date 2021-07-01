@@ -19,32 +19,32 @@ export default {
     filter: {
       type: String,
       requires: true,
-      default: () => 'all'
-    }
+      default: () => 'all',
+    },
   },
   setup() {
     const filters = [
       {
         label: '全部',
-        value: 'all'
+        value: 'all',
       },
       {
         label: '已完成',
-        value: 'completed'
+        value: 'completed',
       },
       {
         label: '未完成',
-        value: 'uncompleted'
-      }
-    ]
+        value: 'uncompleted',
+      },
+    ];
     return {
-      filters
-    }
-  }
-}
+      filters,
+    };
+  },
+};
 </script>
 
-<style scoped lang="stylus">
+<style scoped lang="scss">
 .filter {
   display: flex;
   margin: 24px 2px;

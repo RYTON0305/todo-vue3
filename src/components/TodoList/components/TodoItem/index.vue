@@ -19,16 +19,16 @@ export default {
   props: {
     todoItem: {
       type: Object,
-      require: true
-    }
+      require: true,
+    },
   },
-  setup(props) {
-    return {}
-  }
-}
+  setup() {
+    return {};
+  },
+};
 </script>
 
-<style scoped lang="stylus">
+<style scoped lang="scss">
 .todo-list-item {
   background: #fff;
   padding: 16px;

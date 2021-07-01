@@ -1,11 +1,6 @@
 <template>
   <div class="input-box">
-    <input
-      type="text"
-      class="input-box-input"
-      v-model="todoContent"
-      @keyup.enter="emitAddTodo"
-    />
+    <input type="text" class="input-box-input" v-model="todoContent" @keyup.enter="emitAddTodo" />
     <button class="input-box-btn" @click="emitAddTodo">
       <i class="plus"></i>
     </button>
@@ -13,36 +8,37 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref } from 'vue';
+
 export default {
   name: 'TodoAdd',
   props: {
-    todoId: Number
+    todoId: Number,
   },
   setup(props, context) {
-    return userEmitAddTodo(props.todoId, context.emit)
-  }
-}
+    return userEmitAddTodo(props.todoId, context.emit);
+  },
+};
 
 function userEmitAddTodo(todoId, emit) {
-  const todoContent = ref('')
+  const todoContent = ref('');
   const emitAddTodo = () => {
     const todo = {
       id: todoId,
       content: todoContent.value,
-      completed: false
-    }
-    emit('add-todo', todo)
-    todoContent.value = ''
-  }
+      completed: false,
+    };
+    emit('add-todo', todo);
+    todoContent.value = '';
+  };
   return {
     todoContent,
-    emitAddTodo
-  }
+    emitAddTodo,
+  };
 }
 </script>
 
-<style scoped lang="stylus">
+<style scoped lang="scss">
 .input-box {
   position: relative;
   display: flex;
@@ -53,7 +49,7 @@ function userEmitAddTodo(todoId, emit) {
     border-radius: 48px;
     border: none;
     outline: none;
-    box-shadow: 0 0 24px rgba(0 0 0, 0.08);
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.08);
     width: 100%;
     font-size: 16px;
     color: #626262;

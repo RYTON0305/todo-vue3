@@ -10,28 +10,29 @@
 </template>
 
 <script>
-import TodoItem from './components/TodoItem'
-import { watch } from 'vue'
+import TodoItem from './components/TodoItem';
+import { watch } from 'vue';
+
 export default {
   name: 'TodoList',
   props: {
     todos: {
       type: Array,
       require: true,
-      default: () => []
-    }
+      default: () => [],
+    },
   },
   components: {
-    TodoItem
+    TodoItem,
   },
   setup(props) {
-    watch(props.todos, (val, preVal) => console.log(val))
-    return {}
-  }
-}
+    watch(props.todos, (val) => console.log(val));
+    return {};
+  },
+};
 </script>
 
-<style scoped lang="stylus">
+<style scoped lang="scss">
 .todo-list {
   display: grid;
   row-gap: 14px;
